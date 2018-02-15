@@ -12,7 +12,7 @@ node {
             sh 'cd reports && lighthouse https://www.elastic2ls-com --output json --output html --quiet --chrome-flags="--headless"'
         }
     }
-    #stage('Archive') {
+    //stage('Archive') {
         // Archive results
     //    withAWS(role:'MrJenkins', region:'eu-central-1') {
     //       def stack = cfnDescribe(stack: 'ops-documentation-integration')
