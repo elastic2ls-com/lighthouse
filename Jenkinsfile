@@ -9,7 +9,7 @@ node {
         // Run lighthouse
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
             // One line per domain to check
-            sh 'cd reports && lighthouse https://www.bundesliga.com/de/bundesliga/ --output json --output html --quiet --chrome-flags="--headless"'
+            sh 'cd reports && lighthouse https://www.elastic2ls-com --output json --output html --quiet --chrome-flags="--headless"'
         }
     }
     #stage('Archive') {
