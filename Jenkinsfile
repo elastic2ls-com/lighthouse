@@ -1,4 +1,4 @@
-node {
+node ('dockerslave2'){
     stage('Prepare') {
         cleanWs()
         // Load seccomp configuration for container
