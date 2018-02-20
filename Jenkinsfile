@@ -17,9 +17,5 @@ node {
     }
     //stage('Archive') {
         // Archive results
-    //    withAWS(role:'MrJenkins', region:'eu-central-1') {
-    //       def stack = cfnDescribe(stack: 'ops-documentation-integration')
-    //        s3Upload(bucket: stack.DocumentationBucket, file: 'reports', path: 'lighthouse/')
-    //    }
     //}
 }
