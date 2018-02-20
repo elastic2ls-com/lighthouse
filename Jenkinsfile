@@ -17,6 +17,6 @@ node {
     }
     //stage('Archive') {
         // Archive results
-    s   tep([$class: 'ArtifactArchiver', artifacts: '**/*.html'])
+        step([$class: 'ArtifactArchiver', artifacts: '**/*.html'])
     //}
 }
