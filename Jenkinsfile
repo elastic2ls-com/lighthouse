@@ -9,7 +9,7 @@ node {
         // Run lighthouse
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
         // One line per domain to check
-        sh ' lighthouse --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/docker-apache/'   
+        sh ' lighthouse --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/'   
         }
     }
     stage('Archive') {
