@@ -15,12 +15,12 @@ node {
     stage('Archive') {
         // Archive results
         step([$class: 'ArtifactArchiver', artifacts: '**/*.html'])
-    publishHTML (target: [
-        allowMissing: false,
-        alwaysLinkToLastBuild: false,
-        keepAll: true,
-        reportDir: '',
-        reportFiles: 'index.html',
-        reportName: "RCov Report"])   
+        publishHTML (target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: '',
+            reportFiles: 'index.html',
+            reportName: "lighthouse report"])   
     }
 }
