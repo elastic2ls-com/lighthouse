@@ -9,7 +9,7 @@ node {
         // Run lighthouse
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
         // One line per domain to check
-        sh 'echo 23.45.248.249 www.bundesliga.com >> /etc/hosts && echo 23.44.119.65 s.bundesliga.com  >> /etc/hosts; \
+        sh 'sudo echo 23.45.248.249 www.bundesliga.com >> /etc/hosts && sudo echo 23.44.119.65 s.bundesliga.com  >> /etc/hosts; \
         lighthouse --chrome-flags="--headless --disable-gpu" https://www.bundesliga.com/en/'    
         }
     }
