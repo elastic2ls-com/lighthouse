@@ -20,7 +20,7 @@ node {
             alwaysLinkToLastBuild: true,
             keepAll: true,
             reportDir: '',
-            reportFiles: 'index.html',
+            reportFiles: 'origin.elastic2ls.com_*.report.html	',
             reportName: "lighthouse report"])   
     }
 }
