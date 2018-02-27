@@ -19,7 +19,7 @@ node {
         allowMissing: false,
         alwaysLinkToLastBuild: false,
         keepAll: true,
-        reportDir: '$WORKSPACE',
+        reportDir: '',
         reportFiles: 'index.html',
         reportName: "RCov Report"])   
     }
