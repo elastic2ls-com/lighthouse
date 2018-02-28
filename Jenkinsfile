@@ -11,7 +11,7 @@ node {
         // One line per domain to check
         //sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.fachadmin.de/'
         sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" http://www.grossadministrator.com/'
-        sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/'
+        sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/sbinmount-vboxsf-mounting-failed-with-the-error-no-such-device/'
         //sh 'lighthouse https://www.bundesliga.com/en/ --output json --output html --quiet --chrome-flags="--headless"'    
         }
     }
