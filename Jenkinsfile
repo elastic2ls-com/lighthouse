@@ -9,7 +9,7 @@ node {
         // Run lighthouse
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
         // One line per domain to check
-        sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.fachadmin.de/'
+        //sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.fachadmin.de/'
         sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.grossadministartor.com/'
         sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/'
         //sh 'lighthouse https://www.bundesliga.com/en/ --output json --output html --quiet --chrome-flags="--headless"'    
