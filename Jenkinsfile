@@ -9,7 +9,9 @@ node {
         // Run lighthouse
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
         // One line per domain to check
-        sh -c ' lighthouse --chrome-flags="--headless --disable-gpu" https://www.fachadmin.de/; lighthouse --chrome-flags="--headless --disable-gpu" https://www.grossadministartor.com/; lighthouse --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/'
+        sh ' lighthouse --chrome-flags="--headless --disable-gpu" https://www.fachadmin.de/'
+        sh  'lighthouse --chrome-flags="--headless --disable-gpu" https://www.grossadministartor.com/'
+        sh  'lighthouse --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/'
         }
     }
     stage('Archive') {
