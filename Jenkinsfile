@@ -23,6 +23,11 @@ node {
             keepAll: true,
             reportDir: '',
             reportFiles: 'origin.elastic2ls.com_*.report.html	',
-            reportName: "lighthouse report"])   
+            reportName: "lighthouse report"])
+        withAWS(role:'MrJenkins', region:'eu-central-1') {
+            def stack = cfnDescribe(stack: 'ops-documentation-integration')
+            s3Upload(bucket: stack.DocumentationBucket, file: 'reports', path: 'lighthouse/')        
+        }
     }
+    
 }
