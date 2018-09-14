@@ -7,7 +7,8 @@ node {
     stage('Build') {
         // Run lighthouse
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
-        // One line per domain to check
+        def VERSION = sh(script: 'lighthouse --version', returnStdout: true)
+        println VERSION
         sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.fachadmin.de/'
         sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" http://www.grossadministrator.com/'
         sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/sbinmount-vboxsf-mounting-failed-with-the-error-no-such-device/'
