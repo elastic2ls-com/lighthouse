@@ -9,7 +9,8 @@ node {
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
         def VERSION = sh(script: 'lighthouse --version', returnStdout: true)
         println VERSION
-	sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" --config-path=${WORKSPACE}/custom-config.js https://demo.elastic2ls.com'
+        sh 'ls -la ${WORKSPACE}'
+	      sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" --config-path=${WORKSPACE}/custom-config.js https://demo.elastic2ls.com'
         }
     }
     stage('Archive') {
