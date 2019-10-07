@@ -9,9 +9,7 @@ node {
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
         def VERSION = sh(script: 'lighthouse --version', returnStdout: true)
         println VERSION
-        sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.fachadmin.de/'
-        sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" http://www.grossadministrator.com/'
-        sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" https://www.elastic2ls.com/sbinmount-vboxsf-mounting-failed-with-the-error-no-such-device/'
+        sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu --use-mobile-user-agent --user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" https://demo.elastic2ls.com'
         }
     }
     stage('Archive') {
@@ -22,12 +20,8 @@ node {
             alwaysLinkToLastBuild: true,
             keepAll: true,
             reportDir: '',
-            reportFiles: 'origin.elastic2ls.com_*.report.html	',
+            reportFiles: 'www.elastic2ls.com_*.report.html	',
             reportName: "lighthouse report"])
-        withAWS(role:'MrJenkins', region:'eu-central-1') {
-            def stack = cfnDescribe(stack: 'ops-documentation-integration')
-            s3Upload(bucket: stack.DocumentationBucket, file: 'reports', path: 'lighthouse/')        
         }
     }
-    
-}
+ 
