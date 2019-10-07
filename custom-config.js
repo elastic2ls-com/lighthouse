@@ -1,7 +1,6 @@
 module.exports = {
   extends: 'lighthouse:default',
   settings: {
-    {
     categories: {
       performance: {
         auditRefs: [
