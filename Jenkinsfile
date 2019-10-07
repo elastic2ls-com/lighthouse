@@ -9,7 +9,7 @@ node {
         docker.image('justinribeiro/lighthouse').inside('--security-opt seccomp=$WORKSPACE/chrome.json') {
         def VERSION = sh(script: 'lighthouse --version', returnStdout: true)
         println VERSION
-        sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu --use-mobile-user-agent --user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1" https://demo.elastic2ls.com'
+	sh 'lighthouse --output html --quiet --chrome-flags="--headless --disable-gpu" --config-path=path/to/custom-config.js https://demo.elastic2ls.com'
         }
     }
     stage('Archive') {
