@@ -1,8 +1,9 @@
 node {
     stage('Prepare') {
-        cleanWs()
-        // Load seccomp configuration for container
-        sh 'wget https://raw.githubusercontent.com/jfrazelle/dotfiles/master/etc/docker/seccomp/chrome.json -O $WORKSPACE/chrome.json'
+      cleanWs()
+      checkout scm
+      // Load seccomp configuration for container
+      sh 'wget https://raw.githubusercontent.com/jfrazelle/dotfiles/master/etc/docker/seccomp/chrome.json -O $WORKSPACE/chrome.json'
     }
     stage('Build') {
         // Run lighthouse
