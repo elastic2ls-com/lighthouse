@@ -6,6 +6,7 @@ module.exports = {
       'speed-index',
       'first-cpu-idle',
       'interactive',
+      'byte-efficiency/uses-optimized-images',
     ],
   },
 };
